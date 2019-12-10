@@ -1,30 +1,11 @@
 $(function() {
-    /* var files = ["https://i.ibb.co/W03KzNR/Screenshot-20191126-203245-Gnu-Cash-beta.jpg",
+    var files = ["https://i.ibb.co/W03KzNR/Screenshot-20191126-203245-Gnu-Cash-beta.jpg",
     "https://i.ibb.co/NyqJDsX/gnucash-modif.jpg",
     "https://i.ibb.co/QdK19hF/Screenshot-20191126-203253-Gnu-Cash-beta.jpg",
-    "https://i.ibb.co/y039pz0/Screenshot-20191126-203253-Gnu-Cash-beta-modif.jpg"]; */
+    "https://i.ibb.co/y039pz0/Screenshot-20191126-203253-Gnu-Cash-beta-modif.jpg"];
+    console.log("start");
     
-    var fileread = new FileReader();
-    
-    fileread.onload = function(e) {
-        var content = e.target.result;
-        // console.log(content);
-        var intern = JSON.parse(content); // Array of Objects.
-        console.log(intern); // You can index every object
-        //manageImageAddition(0, files[0]); 
-    };
-
-    var request = new XMLHttpRequest();
-    request.open('GET', "test.json", true);
-    request.responseType = 'blob';            
-
-    request.onload = function(fl) {
-        console.log("loaded xmlreq");
-        fileread.readAsDataURL(fl);
-    }
-    request.send();
-  
-    console.log("sdfsdf");
+    manageImageAddition(0, files[0]); 
 
     function onComplete(data, row) {
         var time = Date.now();
